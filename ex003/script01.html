@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script study</title>
+    <style>
+        body{
+            background-color: rgb(133, 181, 200);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Studying DOM</h1>
+    <p>Here is the result.</p>
+    <p>Learning how to use <strong>DOM</strong> in JavaScript.</p>
+    <div>Click here.</div>
+
+    <script>
+        var p0 = window.document.getElementsByTagName('p') [0]
+        window.document.write('It is written like this: ' + p0.innerText)
+
+        var p1 = window.document.getElementsByTagName('p') [1]
+        p1.style.color = 'black'
+
+        var title = window.document.getElementsByTagName('h1') [0]
+        title.style.background = 'black'
+
+        var body = window.document.body
+        body.style.background = 'green'
+        
+
+    </script>
+</body>
+</html>
