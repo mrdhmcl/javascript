@@ -9,13 +9,22 @@
 <body>
     <h1>Magic Calculator</h1>
 
-    <input type="number" name="eq1" id="eq1">
+    <input type="number" name="eq1" id="eq1"> +
     <input type="number" name="eq2" id="eq2">
     <input onclick="sum()" type="button" value="Add">
+    <div id="res">Result</div>
 
     <script>
         function sum(){
-            var eq1 = window.document.getElementById()
+            var ec1 = window.document.getElementById('eq1')
+            var n1 = Number(ec1.value)
+
+            var ec2 = window.document.getElementById('eq2')
+            var n2 = Number(ec2.value)
+
+            var add = window.document.getElementById('res')
+            add = n1 + n2
+            res.innerHTML = `The sum of ${n1} and ${n2} is <strong>${add}</strong>.`
         }
     </script>
 </body>
