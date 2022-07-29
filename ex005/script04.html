@@ -11,25 +11,27 @@
 </head>
 <body>
     <h1>Nationality conditions</h1>
+    
     Where are you from? <input type="text" name="nationality" id="inationality">
+
     <input onclick="analyze()" type="button" value="Send">
+
     <div id="res">
         <p>Result</p>
     </div>
 
     <script>
         function analyze(){
-            var nation = document.querySelector('input#inationality')
-            country = String(nation.innerHTML)
+            var country = window.document.getElementById('inationality').value
 
             var result = document.getElementById('res')
             
             if(country == 'Brazil'){
-                result.innerHTML += `You are from ${country}, so you are brazilian.`
+                result.innerHTML = `<p>You are from ${country}, so you are brazilian.</p>`
             } 
             
             else {
-                result.innerHTML = `You are from ${country}, so you are foreigner.`
+                result.innerHTML = `<p>You are from ${country}, so you are foreigner.</p>`
             }
         }
     </script>
