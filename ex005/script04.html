@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condition study</title>
+    <style>
+        body{font-family: Arial, Helvetica, sans-serif;}
+    </style>
+</head>
+<body>
+    <h1>Nationality conditions</h1>
+    Where are you from? <input type="text" name="nationality" id="inationality">
+    <input onclick="analyze()" type="button" value="Send">
+    <div id="res">
+        <p>Result</p>
+    </div>
+
+    <script>
+        function analyze(){
+            var nation = document.querySelector('input#inationality')
+            country = String(nation.innerHTML)
+
+            var result = document.getElementById('res')
+            
+            if(country == 'Brazil'){
+                result.innerHTML += `You are from ${country}, so you are brazilian.`
+            } 
+            
+            else {
+                result.innerHTML = `You are from ${country}, so you are foreigner.`
+            }
+        }
+    </script>
+</body>
+</html>

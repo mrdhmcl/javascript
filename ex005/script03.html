@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condition study</title>
+    <style>
+        body{
+            font-family: Arial;
+        }
+        input#txtspeed{
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fine system</h1>
+    Your speed was: <input type="number" name="txtspeed" id="txtspeed">Km/h.
+    <input onclick="calculate()" type="button" value="Analyze">
+    <div id="res">
+        <p>Result</p>
+    </div>
+
+    <script>
+        function calculate(){
+            var speed = document.querySelector('input#txtspeed')
+            speedo = Number(speed.value)
+
+            var result = document.getElementById('res')
+            result.innerHTML = `<p>You were driving at <strong>${speedo}Km/h</strong>.</p>`
+            if(speedo > 60) {
+                result.innerHTML += '<p>You have exceeded the maximum speed limit. You are <strong>FINED</strong>.</p>'
+            }
+            result.innerHTML += 'Always wear your seat belt.'
+        }
+    </script>
+</body>
+</html>
