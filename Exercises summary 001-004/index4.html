@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+    <style>
+        body{
+            font: 20px Arial, sans-serif;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Practicing DOM</h1>
+    <p>Here is the result.</p>
+    <p id="special">Learning how to use <strong>DOM</strong> in JavaScript.</p>
+    <input onclick="show()" id="add" type="button" value="Click here">
+
+    <script>
+        var title = window.document.getElementsByTagName('h1')[0]
+        title.style.background = 'white'
+        title.style.color = 'black'
+
+        var bady = window.document.body
+        bady.style.background = 'blueviolet'
+
+        function show(){
+        var plus = window.document.getElementById('add')
+
+        var copy = window.document.getElementById('special')
+
+        plus.value = copy.innerText
+    }
+    </script>
+</body>
+</html>

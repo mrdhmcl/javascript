@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Using and capturing data</title>
+    <title>Variable practice</title>
     <style>
         body{
             background-color: #87ceeb;
@@ -29,9 +29,19 @@
     <p>I got rid of the curse!</p>
 
     <script>
-        var name = window.prompt('Hello, stranger! What is your name?')
+        window.alert('Welcome to my website!')
 
-        window.alert('It is so nice to meet you ' + name + '!')
+        window.alert('Let me introduce you to the Magic Calculator')
+
+        window.alert('It can sum up any number correctly')
+
+        var n1 = Number(window.prompt('Lets try it! Enter a number: '))
+
+        var n2 = Number(window.prompt('Enter another number: '))
+
+        var total = n1 + n2
+
+        window.alert(`The total between ${n1} and ${n2} is equal to ${total}`)
     </script>
 </body>
 </html>

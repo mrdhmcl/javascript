@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capturing data</title>
+    <style>
+        body{
+            background-color: black;
+            font: bold 20px Arial, sans-serif;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+
+
+    <script>
+        var name = window.prompt('Hello, stranger! What is your name?')
+
+        window.document.write(`<p>Hello, ${name}! Your name has: ${name.length} letters.<br>
+        This is your name in upper case: ${name.toUpperCase()}.<br>
+        This is your name in lower case: ${name.toLowerCase()}.</p>`)
+    </script>
+</body>
+</html>

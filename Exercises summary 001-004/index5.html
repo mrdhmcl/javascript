@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Events</title>
+    <style>
+        div{
+            margin: 0;
+
+            height: 250px;
+            width: 250px;
+            background-color: darkgrey;
+
+            color: white;
+            font: bolder 25px arial, sans-serif;
+
+            line-height: 210px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="grayarea">
+        Interact...
+    </div>
+
+    <script>
+        var ga = document.getElementById('grayarea')
+
+        ga.addEventListener ('click', click)
+        ga.addEventListener('mouseenter', minhapiroca)
+        ga.addEventListener ('mouseout', ratofora)
+
+        function click(){
+            ga.innerText = 'You clicked'
+            ga.style.color = 'black'
+            ga.style.background = 'brown'
+        }
+
+        function minhapiroca(){
+            ga.innerText = 'You entered'
+            ga.style.color = 'white'
+        }
+
+        function ratofora(){
+            ga.innerText = 'You left'
+            ga.style.color = 'white'
+        }
+    </script>
+</body>
+</html>
