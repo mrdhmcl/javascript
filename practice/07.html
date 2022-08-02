@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers in JS</title>
+    <style>
+        body{
+            font: 16px arial;
+        }
+
+        input{
+            padding: 30px;
+        }
+
+        .burton{
+            font: normal 16px Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student average 1.0</h1>
+
+    <input class="burton" type="button" value="Calculate average" onclick="calculate()">
+
+    <p id="res">The result will appear here...</p>
+
+    <script>
+        function calculate(){
+            var name = window.prompt('What is the student name?')
+            var grade1 = window.prompt('What was your first grade?')
+            var grade2 = window.prompt('What was your second grade?')
+            var grrade1 = Number(grade1)
+            var grrade2 = Number(grade2)
+            var average = (grrade1 + grrade2) / 2
+            var result = document.querySelector('p#res')
+
+            result.innerHTML = `<p>Calculating the final average grade of <mark>${name}</mark>...</p>
+            <p>The received grades were: <mark>${grrade1}</mark> and <mark>${grrade2}</mark>.</p>
+            The final average is <mark>${average}</mark>.
+            `
+        }
+    </script>
+</body>
+</html>

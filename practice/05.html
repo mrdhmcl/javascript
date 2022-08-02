@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers in JS</title>
+    <style>
+        body{
+            font: 18px arial;
+        }
+
+        input{
+            padding: 30px;
+        }
+
+        .burton{
+            font: normal 16px Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manipulating numbers</h1>
+    <input class="burton" type="button" value="Click here to calculate" onclick="calculate()">
+
+    <p id="res">Result will appear here...</p>
+
+    <script>
+        window.alert('Welcome to my website!')
+        function calculate(){
+            var nmb = window.prompt('Enter a number: ')
+            var number = Number(nmb)
+
+            var result = document.getElementById('res')
+            var double = number * 2
+            var half = number / 2
+            result.innerHTML = `Double ${number} is ${double}, and half of it is ${half}`
+        }
+    </script>
+</body>
+</html>

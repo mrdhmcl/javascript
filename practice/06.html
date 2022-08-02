@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers in JS</title>
+    <style>
+        body{
+            font: 18px arial;
+        }
+
+        input{
+            padding: 30px;
+        }
+
+        .burton{
+            font: normal 16px Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Adding two numbers</h1>
+
+    <input class="burton" type="button" value="Start the sum" onclick="add()">
+
+    <p id="res">The result will appear here...</p>
+
+    <script>
+        function add(){
+            var nmb1 = window.prompt('Enter the first number: ')
+            var nmb2 = window.prompt('Enter the second number: ')
+
+            var number1 = Number(nmb1)
+            var number2 = Number(nmb2)
+            var total = number1 + number2
+            var result = document.querySelector('p#res')
+
+            result.innerHTML = `The sum between <mark>${number1}</mark> and <mark>${number2}</mark> is equal to <strong>${total}</strong>!`
+        }
+    </script>
+</body>
+</html>

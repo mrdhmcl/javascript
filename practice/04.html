@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capturing data</title>
+    <style>
+        body{
+            font: 18px arial;
+        }
+
+        input{
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Capturing data v2.0</h1>
+
+    <input type="button" value="Click here to start" onclick="ask()">
+
+    <p id="res">The result will appear here</p>
+    
+    <script>
+        function ask(){
+            var name = window.prompt('What is your name?')
+            var result = document.querySelector('p#res')
+            result.innerHTML = `Hello, <strong>${name}</strong>! It is very nice to meet you! &#x1F44B;`
+        }
+    </script>
+</body>
+</html>
