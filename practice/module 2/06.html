@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Age Calculator</h1>
+
+    <input class="burton" onclick="calculate()" type="button" value="Start">
+
+    <p id="res">Something will appear here...</p>
+
+    <script>
+        function calculate(){
+            let date = new Date()
+            let year = date.getFullYear()
+            let birth = window.prompt('What year were you born?')
+            let birthn = Number(birth)
+            let age = year - birthn
+            let result = document.getElementById('res')
+            
+            result.innerHTML = `Who was born in ${birth} will be <strong>${age}</strong> in ${year}.`
+        }
+    </script>
+</body>
+</html>

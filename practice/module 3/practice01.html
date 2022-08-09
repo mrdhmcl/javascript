@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Counting</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Counting from one to ten</h1>
+    <input class="burton" type="button" value="Counting 1 to 10" onclick="Count()">
+    <p id="result">Click on the button above to start counting</p>
+
+    <script>
+        function Count(){
+            let res = document.querySelector('p#result')
+            let c = 1
+            res.innerHTML += '<h1>Counting:</h1>'
+
+            while (c <= 10){
+            res.innerHTML += `${c} &#x1F449;`
+                c++
+            }
+            res.innerHTML += '&#x1F38C;'
+        }
+    </script>
+</body>
+</html>

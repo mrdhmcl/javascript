@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divination</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Guess my number</h1>
+
+    <input id="burton" class="burton" onclick="guess()" type="button" value="Try a guess">
+
+    <p id="res">I already thought in a number between 1 and 100...</p>
+
+    <script>
+        var random = Math.floor(Math.random() * 100 + 1)
+        function guess(){
+            var nmb = window.prompt('Which is your guess?')
+            var guesss = Number(nmb)
+            var result = document.getElementById('res')
+            var button = document.getElementById('burton')
+
+            if(guesss > random){
+                result.innerHTML += `<p>You said ${guesss}. My number is <strong>LOWER!</strong></p>`
+            } else if (random == guesss){
+                result.innerHTML += `<p><strong>CONGRATULATIONS!</strong> You did it! I had drawn the number ${random}.</p>`
+                button.style.visibility = 'hidden'
+            } else {
+                result.innerHTML += `<p>You said ${guesss}. My number is <strong>HIGHER!</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>

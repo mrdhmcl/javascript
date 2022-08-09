@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The seasons</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Find out the season</h1>
+    <input class="burton" onclick="season()" type="button" value="Inform the month here">
+    <p id="result">Click on the button above to inform the month.</p>
+
+    <script>
+        function season(){
+            let month = window.prompt('Enter the month in full (ex: April):')
+            let res = document.getElementById('result')
+            let station
+
+            switch(month.toUpperCase()){
+                case 'JANUARY': case 'FEBRUARY': case 'MARCH':
+                station = 'WINTER'
+                break
+
+                case 'APRIL': case 'MAY': case 'JUNE':
+                station = 'SPRING'
+                break
+
+                case 'JULY': case 'AUGUST': case 'SEPTEMBER':
+                station = 'SUMMER'
+                break
+
+                case 'OCTOBER': case 'NOVEMBER': case 'DECEMBER':
+                station = 'AUTUMN'
+                break
+
+                default:
+                station = 'INDEFINIDA'
+                break
+            }
+            res.innerHTML = `In the northern hemisphere, in <mark>${month}</mark>, we're in <mark><strong>${station}</strong></mark>`
+        }
+    </script>
+</body>
+</html>

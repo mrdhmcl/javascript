@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h2{
+            font-family: 'Pacifico', cursive;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <h1>Multiple actions</h1>
+    <input class="burton" onclick="calculator()" type="button" value="Click here to start">
+    <p id="res">Click on the button above to start.</p>
+
+    <script>
+        function calculator(){
+            let result = document.getElementById('res')
+            let n1 = Number(window.prompt('Enter the first number:'))
+            let n2 = Number(window.prompt('Second number:'))
+            let action = Number(window.prompt (`Informed numbers: ${n1} and ${n2}.
+            What are we gonna do with them?
+            [1] Add
+            [2] Subtract
+            [3] Multiply
+            [4] Divide`))
+            let add = n1 + n2
+            let subtract = n1 - n2
+            let multiply = n1 * n2
+            let divide = n1 / n2
+
+            if (action == 1){
+                result.innerHTML = `<h2>Calculating...</h2>
+                ${n1} + ${n2} = <strong>${add}</strong>`
+            } else if (action == 2){
+                result.innerHTML = `<h2>Calculating...</h2>
+                ${n1} - ${n2} = <strong>${subtract}</strong>`
+            } else if (action == 3){
+                result.innerHTML = `<h2>Calculating...</h2>
+                ${n1} x ${n2} = <strong>${multiply}</strong>`
+            } else if (action == 4){
+                result.innerHTML = `<h2>Calculating...</h2>
+                ${n1} / ${n2} = <strong>${divide}</strong>`
+            } else{
+                result.innerHTML = `<h2>Calculating...</h2>
+                INVALID OPTION! You entered ${n1} and ${n2}, but we don't know what to do with them.`
+            }
+        }
+    </script>
+</body>
+</html>

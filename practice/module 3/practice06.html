@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Counting</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>"Smart" counting</h1>
+
+    <p>Enter any value in the boxes below, simulate counts up and down. You can also use negative values.</p>
+
+    <p>Initial value: <input class="normal" type="number" name="initialvalue" id="v1" placeholder="Start of count"></p>
+
+    <p>Final value: <input class="normal" type="number" name="finalvalue" id="v2" placeholder="End of count"></p>
+
+    <input class="green" type="button" value="Count" onclick="count()">
+
+    <p id="res">Fill in the data above and click on the button.</p>
+
+
+<script>
+    function count(){
+        let v1 = document.getElementById('v1')
+        let n1 = Number(v1.value)
+
+        let v2 = document.getElementById('v2')
+        let n2 = Number(v2.value)
+
+        let res = document.getElementById('res')
+
+        if (v1.value.length == 0 || v2.value.length == 0){
+            window.alert('[ERROR] Data missing! Fill in the informations and try again')
+        } else if (n2 > n1){
+            res.innerHTML += `<h2>Count up from ${n1} to ${n2}</h2>`
+
+            for (var c = n1 + 0; c <= n2; c++){
+                res.innerHTML += `${c} &#x1F449;`
+
+            }
+            res.innerHTML += '&#x1F38C;'
+        } else if (n2 < n1){
+            res.innerHTML += `<h2>Countdown from ${n1} to ${n2}</h2>`
+
+            for (var c = n1 - 0; c >= n2; c--){
+                res.innerHTML += `${c} &#x1F449;`
+            }
+            res.innerHTML += '&#x1F38C;'
+        } else{
+            res.innerHTML += '<p>Impossible to count. Try different numbers.</p>'
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System interactions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Analyzing system date and time</h1>
+
+    <input class="burton" onclick="get()" type="button" value="Start analyze">
+
+    <p id="res">Something will appear here...</p>
+
+    <script>
+        function get(){
+            let now = new Date()
+            let day = now.getDay()
+            let year = now.getFullYear()
+            let hour = now.getHours()
+            let minute = now.getMinutes()
+            let second = now.getSeconds()
+            let result = document.querySelector('p#res')
+
+            result.innerHTML = `<p>Day: <mark>${day}</mark></p>
+            <p>Year: <mark>${year}</mark></p>
+            <p>Hour: <mark>${hour}</mark></p>
+            <p>Minutes: <mark>${minute}</mark></p>
+            <p>Seconds: <mark>${second}</mark></p>`
+        }
+    </script>
+</body>
+</html>

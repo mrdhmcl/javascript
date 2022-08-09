@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Interactions</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1{
+            font-family: 'Pacifico', cursive;
+            font-weight: normal;
+        }
+
+        input{
+            padding: 30px;
+
+        }
+
+        .burton{
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Interactions</h1>
+    <input onclick="ac1()" class="burton" type="button" value="Action 1"> <input onclick="ac2()" class="burton" type="button" value="Action 2"> <input onclick="ac3()" class="burton" type="button" value="Action 3"> <input onclick="ac4()" class="burton" type="button" value="Action 4">
+    
+    <p id="res">Your interactions with the buttons above will be registered here.</p>
+
+    <script>
+        function ac1(){
+            let result = document.querySelector('p#res')
+            result.innerHTML += '<p>You clicked on the first button</p>'
+        }
+
+        function ac2(){
+            let result = document.querySelector('p#res')
+            result.innerHTML += '<p>You clicked on the second button</p>'
+        }
+
+        function ac3(){
+            let result = document.querySelector('p#res')
+            result.innerHTML += '<p>You clicked on the third button</p>'
+        }
+
+        function ac4(){
+            let result = document.querySelector('p#res')
+            result.innerHTML += '<p>You clicked on the fourth button</p>'
+        }
+    </script>
+</body>
+</html>

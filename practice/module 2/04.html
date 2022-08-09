@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System interaction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Interacting with the system</h1>
+
+    <input class="burton" onclick="geosystem()" type="button" value="Click here">
+
+    <p id="res">Something will appear here...</p>
+
+    <script>
+        function geosystem(){
+            let now = new Date()
+            let result = document.getElementById('res')
+
+            result.innerHTML = `The info received by the system is: <mark>${now}</mark>.`
+        }
+    </script>
+</body>
+</html>

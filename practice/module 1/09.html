@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click counter</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1{
+            font-family: 'Pacifico', cursive;
+            font-weight: normal;
+        }
+
+        input{
+            padding: 20px;
+
+        }
+
+        .burton{
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click counter</h1>
+
+    <input class="burton" onclick="count()" type="button" value="Click here to start counting">
+    <input class="burton" onclick="reset()" type="reset" value="Reset the counter">
+
+    <p id="res">The counter has <mark id="numero">0</mark> clicks.</p>
+
+    <script>
+        var total = 0
+        var result = document.querySelector('p#res')
+        
+        function count(){           
+            total ++
+            result.innerHTML = `The counter has <mark>${total}</mark> clicks.`
+        }
+
+        function reset(){
+            total = 0
+            result.innerHTML = null
+        }
+    </script>
+</body>
+</html>

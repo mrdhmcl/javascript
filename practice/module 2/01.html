@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Conditions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Student average 2.0</h1>
+
+    <input class="burton" onclick="calculate()" type="button" value="Calculate average">
+
+    <p id="res">The result will appear here...</p>
+
+    <script>
+    function calculate(){
+        let name = window.prompt('What is the student name?')
+        let grrade1 = window.prompt('What was the first grade?')
+        let grade1 = Number(grrade1)
+        let grrade2 = window.prompt('What was the second grade?')
+        let grade2 = Number(grrade2)
+        let average = (grade1 + grade2) / 2
+        let result = document.querySelector('p#res')
+        result.innerHTML = `<p>Calculating the final average of <mark>${name}</mark>...</p>
+        <p>The grades received were: <mark>${grade1}</mark> and <mark>${grade2}</mark>.</p>
+        The final average is: <mark>${average}</mark>.`
+
+        if(average >= 7){
+            result.innerHTML += `<p>Our message is: <span style="color: crimson; font-weight: bold">Congratulations!</span></p>`
+        } else{
+            result.innerHTML += `<p>Our message is: <span style="color: crimson; font-weight: bold">Study a little more.</span></p>`
+        }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Let's count</h1>
+    </header>
+
+    <main>
+       <div id="data">
+        <p>Start: <input type="number" name="start" id="txtsta"></p>
+        <p>End: <input type="number" name="end" id="txten"></p>
+        <p>Step: <input type="number" name="step" id="txtste"></p>
+        <p><input type="button" value="Count" onclick="Math()"></p>
+       </div>
+
+       <div id="result">
+        <p>Preparing a count...</p>
+       </div>
+    </main>
+
+    <footer>
+        <p id="footer">&copy; mrdhmcl</p>
+    </footer>
+
+
+    <script>
+        function Math() {
+            let sta = document.getElementById('txtsta')
+            let en = document.getElementById('txten')
+            let ste = document.getElementById('txtste')
+            let res = document.getElementById('result')
+
+            if(sta.value.length == 0 || en.value.length == 0 || ste.value.length == 0){
+                window.alert('[ERROR] Data missing!')
+            } else {
+                res.innerHTML = '<p>Calculating: </p>'
+                
+                let start = Number(sta.value)
+                let end = Number(en.value)
+                let step = Number(ste.value)
+
+                for (let c = start; c <= end; c += step){
+                    res.innerHTML += `${c} &#x1F449;`
+                }
+
+                res.innerHTML += '&#x1F3C1;'
+            }
+
+
+        }
+    </script>
+</body>
+</html>

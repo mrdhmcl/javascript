@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Numbers</title>
+    <style>
+        body{
+            font: 16px arial;
+        }
+
+        input{
+            padding: 30px;
+        }
+
+        .burton{
+            font: normal 16px Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Some JavaScript calculations</h1>
+
+    <input onclick="calculate()" class="burton" type="button" value="Click here to calculate">
+
+    <p id="res">The result will appear here...</p>
+
+    <script>
+        function calculate(){
+            var nmb = window.prompt('Enter a number: ')
+            var number = Number(nmb)
+            var result = document.getElementById('res')
+            var absolut = Math.abs (number)
+            var entire = Math.trunc(number)
+            var nextentire = Math.round(number)
+            var squareroot = Math.sqrt(number)
+            var cuberoot = Math.cbrt(number)
+            var squared = number ** 2
+            var cubed = number ** 3
+
+            result.innerHTML = `<p>The number that will be analyzed here is <strong>${number}</strong></p>
+            <hr>
+            <p>Its absolute value is ${absolut}</p>
+            <p>Its entire part is ${entire}</p>
+            <p>The closest entire number is ${nextentire}</p>
+            <p>Its square root is ${squareroot}</p>
+            <p>Its cube root is ${cuberoot}</p>
+            <p>The value of ${number}<sup>2</sup> is ${squared}</p>
+            <p>The value of ${number}<sup>3</sup> is ${cubed}</p>`            
+        }
+    </script>
+</body>
+</html>

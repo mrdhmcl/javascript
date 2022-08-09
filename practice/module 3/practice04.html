@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Counting</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Countdown from 10 to 1</h1>
+    <input class="burton" type="button" value="Counting 10 to 1" onclick="Count()">
+    <p id="result">Click on the button above to start counting</p>
+
+<script>
+    function Count(){
+        let res = document.querySelector('p#result')
+        res.innerHTML += '<h1>Countdown 10 to 1:'
+        for (let c = 10; c >= 1; c--){
+            res.innerHTML += `${c} &#x1F449;`
+        }
+        res.innerHTML += '&#x1F38C;'
+    }
+</script>

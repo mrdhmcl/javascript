@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+body{
+    background-color: rgb(70, 142, 256);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+h1{
+    text-align: center;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.396);
+}
+
+main{
+    margin: auto;
+    max-width: 500px;
+    background-color: white;
+    color: black;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.508);
+}
+
+select{
+    
+}
+
+footer{
+    text-align: center;
+    font-style: italic;
+}

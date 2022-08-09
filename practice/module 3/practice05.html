@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Counting</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Counting from 0 until any positive number</h1>
+
+    <p>Choose the end limit for counting from 0 (enter only positive numbers)</p>
+
+    <p>Final value: 
+    <input class="normal" type="number" name="v1" id="inumber" placeholder="Only positives">
+    <input class="green" type="button" value="Count" onclick="Count()">
+    </p>
+    
+    <p id="result">Fill in the data above and click on the button.</p>
+
+<script>
+    function Count(){
+        let res = document.querySelector('p#result')
+        let num = document.getElementById('inumber')
+        let n1 = Number(num.value)
+        let c = 0
+
+        res.innerHTML = ''
+        res.innerHTML +=  `<h2>Counting from 0 to ${n1}: </h2>`
+        
+        while (c <= n1){
+            res.innerHTML += `${c} &#x1F449;`
+            c++
+        }
+        res.innerHTML += '&#x1F38C;'
+    }
+</script>

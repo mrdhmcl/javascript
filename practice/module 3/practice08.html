@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial calculation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Factorial calculation</h1>
+
+    <p>Enter a number (between 1 and 21) in the box below and I'll show you its factorial calculation.</p>
+
+    <p>Number: 
+        <input class="minwidth" type="number" name="v1" id="iv1">
+        <input class="green" type="button" value="Factorial" onclick="calculate()">
+    </p>
+
+    <p id="res"> Fill in the data above and click on the button.</p>
+
+
+<script>
+    function calculate(){
+        let nmb = document.getElementById('iv1')
+        let n1 = Number(nmb.value)
+        let res = document.getElementById('res')
+
+        if (n1 >= 1 && n1 <= 21){
+            res.innerHTML += `<h2>Calculating ${n1}!</h2>`
+
+            for (let c = 0; c < n1 - 1; c++){
+                let less = n1 - c
+                res.innerHTML += `${less} x `
+            }
+            res.innerHTML += `1 = ${n1}`
+        }
+    }
+</script>
+</body>
+</html>

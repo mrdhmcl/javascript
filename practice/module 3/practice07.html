@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication table</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Multiplication table</h1>
+
+    <p>Enter a number in the box below and I'll show you its multiplication table.</p>
+
+    <p>Number: 
+        <input class="normal" type="number" name="v1" id="iv1">
+        <input class="green" type="button" value="Multiplication table" onclick="show()">
+    </p>
+
+    <p id="res">Fill in the data above and click on the button.</p>
+
+
+    <script>
+        function show(){
+            let nmb = document.getElementById('iv1')
+            let number = Number(nmb.value)
+            let res = document.getElementById('res')
+            let c = 1
+
+            res.innerHTML = `<h2>${number} times table</h2>`
+            do{
+                let multiple = number * c
+                res.innerHTML += `${number} x ${c} = <strong>${multiple}</strong><br>`
+                c++
+            }
+            while (c <= 10)
+        }
+    </script>
+</body>
+</html>

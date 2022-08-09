@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Conditions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Is it odd or even?</h1>
+
+    <input class="burton" onclick="find()" type="button" value="Click here to start">
+
+    <p id="res">The result will appear here...</p>
+
+    <script>
+        function find(){
+            let n1 = window.prompt('Enter a number:')
+            let number = Number(n1)
+            let result = document.getElementById('res')
+            let find = number % 2
+
+            if (find == 0){
+                result.innerHTML = `The number ${number} that was entered is <strong>EVEN!</strong>`
+            } else{
+                result.innerHTML = `The number ${number} that was entered is <strong>ODD!</strong>`
+            }
+        }
+    </script>
+</body>
+</html>

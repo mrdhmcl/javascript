@@ -1,6 +1,6 @@
-var c = 1
+var end = 20
+var step = 1
 
-while(c <= 10){
-    console.log(`Passo ${c}`)
-    c++
+for (c = 5; c <= end; c += step){
+    console.log(c)
 }
