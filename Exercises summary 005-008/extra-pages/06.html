@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counting</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            background-color: #c8c8e8;
+        }
+
+        h1{
+            text-align: center;
+            font-size: 36px;
+        }
+
+        main{
+            background-color: white;
+            margin: auto;
+            max-width: 500px;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.419);
+        }
+
+        footer{
+            text-align: center;
+            font-style: italic;
+        }
+
+        a{
+    background-color: #E5E5E5;
+    border: 1px solid black;
+    color: black;
+    padding: 8px;
+    border-radius: 2px;
+    text-decoration: none;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Let's count</h1>
+    </header>
+
+    <main>
+        <p>
+            <label for="iv1">Start: </label> 
+            <input type="number" name="v1" id="iv1">
+        </p>
+        <p>
+            <label for="iv2">End: </label>
+            <input type="number" name="v2" id="iv2">
+        </p>
+        <p>
+            <label for="iv3">Step: </label>
+            <input type="number" name="v3" id="iv3">
+        </p>
+        <input type="button" value="Count" onclick="show()">
+        <p id="res">Preparing a count...</p>
+        <a href="../index.html">Home</a>
+    </main>
+
+    <footer>
+        <p>&copy; mrdhmcl</p>
+    </footer>
+
+
+    <script>
+        function show(){
+            let start = Number(document.getElementById('iv1').value)
+            let end = Number(document.getElementById('iv2').value)
+            let step = Number(document.getElementById('iv3').value)
+            let res = document.getElementById('res')
+            
+            res.innerHTML = "<h3>Calculating: </h3>"
+            if (start < end) {
+                for(let c = start; c <= end; c += step){
+                 res.innerHTML += `${c} &#x1F449;`
+            }
+        } else if(start > end){
+            for (let b = start; b >= end; b-= step){
+                res.innerHTML += `${b} &#x1F449;`
+            }
+        } else{
+            window.alert('[ERROR] Impossible to count! Check the numbers you chose and try again')
+        }
+        res.innerHTML += '&#x1F64C;'
+    }
+    </script>
+</body>
+</html>

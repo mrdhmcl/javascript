@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            background-color: #c8c8e8;
+        }
+
+        h1{
+            text-align: center;
+            font-size: 36px;
+        }
+
+        main{
+            background-color: white;
+            margin: auto;
+            max-width: 500px;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.419);
+        }
+
+        footer{
+            text-align: center;
+            font-style: italic;
+        }
+
+        a{
+    background-color: #E5E5E5;
+    border: 1px solid black;
+    color: black;
+    padding: 8px;
+    border-radius: 2px;
+    text-decoration: none;
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: 10px
+}
+
+a:hover{
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Multiplication table</h1>
+    </header>
+
+    <main>
+        <p>
+            <label for="iv1">Number: </label>
+            <input type="number" name="v1" id="iv1">
+            <input type="button" value="Generate" onclick="generate()">
+        </p>
+        <select name="table" id="itable" size="10">
+            <option value="opt1" id="res">Enter a number above...</option>
+        </select>
+        <a href="../index.html" rel="previous" target="_self">Home</a>
+    </main>
+
+    <footer>
+        <p>&copy; mrdhmcl</p>
+    </footer>
+
+
+
+    <script>
+        function generate(){
+            let n1 = Number(document.querySelector('input#iv1').value)
+            let res = document.getElementById('res')
+            let table = document.querySelector('select#itable')
+
+            table.innerHTML = ''
+            for (let c = 1; c <= 10; c++){
+            let multiple = c * n1
+            let option = document.createElement('option')
+            option.text = `${c} x ${n1} = ${multiple}`
+            table.appendChild(option)
+        }
+        }
+    </script>
+</body>
+</html>
