@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nationality</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Gringo or not?</h1>
+    </header>
+
+    <section>
+        <form action="#" method="get">
+            <p>
+                <label for="icountry">Where are you from?</label>
+                <input type="text" name="country" id="icountry">
+                <input type="submit" value="Send" formaction="javascript:identify()">
+            </p>
+        </form>
+    </section>
+
+    <section>
+        <p id="res">Result</p>
+        <a href="../index.html" target="_self" rel="previous">Home</a>
+    </section>
+
+
+<script>
+    function identify(){
+        let country = document.getElementById('icountry').value
+        let icountry = country.toUpperCase()
+        let res = document.getElementById('res')
+
+        if(icountry == 'BRAZIL'){
+            res.innerHTML = `If you are from ${country}, then you are brazilian.`
+        } else {
+            res.innerHTML = `If you are from ${country}, then you are gringo.`
+        }
+    }
+</script>
+</body>
+</html>

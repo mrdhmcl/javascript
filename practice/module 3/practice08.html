@@ -12,10 +12,14 @@
 
     <p>Enter a number (between 1 and 21) in the box below and I'll show you its factorial calculation.</p>
 
-    <p>Number: 
-        <input class="minwidth" type="number" name="v1" id="iv1">
-        <input class="green" type="button" value="Factorial" onclick="calculate()">
-    </p>
+    <form action="#" method="get">
+        <p>
+            <label for="iv1">Number:</label>
+            <input class="minwidth" type="number" name="v1" id="iv1" max="21" min="1">
+
+            <input class="green" type="submit" value="Factorial" formaction="javascript:calculate()">
+        </p>
+    </form>
 
     <p id="res"> Fill in the data above and click on the button.</p>
 
@@ -26,16 +30,15 @@
         let n1 = Number(nmb.value)
         let res = document.getElementById('res')
 
-        if (n1 >= 1 && n1 <= 21){
             res.innerHTML += `<h2>Calculating ${n1}!</h2>`
+            let multiple = 1
 
-            for (let c = 0; c < n1 - 1; c++){
-                let less = n1 - c
-                res.innerHTML += `${less} x `
+            for (let c = n1; c > 1; c--){
+                res.innerHTML += `${c} x `
+                multiple *= c
             }
-            res.innerHTML += `1 = ${n1}`
+            res.innerHTML += `1 = <strong>${multiple.toLocaleString('pt-BR')}</strong>`
         }
-    }
 </script>
 </body>
 </html>

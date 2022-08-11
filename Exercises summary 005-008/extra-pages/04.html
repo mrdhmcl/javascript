@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="time()">
+    <h1>What time is it?</h1>
+    <p id="res"></p>
+    <hr>
+    <p>What if you could change time? Select a different hour and click on the button below.</p>
+    <p>
+        <label for="ihour">Choose a different hour:</label>
+        <input type="number" name="hour" id="ihour"> :
+        <input type="number" name="minute" id="iminute">
+        <input type="button" value="Change" onclick="change()">
+    </p>
+    <p id="ress"></p>
+    <a href="../index.html" target="_self" rel="previous">Home</a>
+
+    <script>
+        function time(){
+            let time = new Date()
+            let hour = time.getHours()
+            let minute = time.getMinutes()
+            let res = document.getElementById('res')
+
+            if(hour <= 12){
+                res.innerHTML = `It is now ${hour}:${minute}h. Good morning!`
+            } else if (hour < 18){
+                res.innerHTML = `It is now ${hour}:${minute}h. Good afternoon!`
+            } else{
+                res.innerHTML = `It is now ${hour}:${minute}h. Good night!`
+            }
+        }
+
+        function change(){
+            let newhour = document.getElementById('ihour').value
+            let newminute = document.getElementById('iminute').value
+            let ress = document.getElementById('ress')
+
+            if(newhour <= 12){
+                ress.innerHTML = `You've changed the time successfully! It is now ${newhour}:${newminute}h. Good morning!`
+            } else if (newhour < 18){
+                ress.innerHTML = `You've changed the time successfully! It is now ${newhour}:${newminute}h. Good afternoon!`
+            } else{
+                ress.innerHTML = `You've changed the time successfully! It is now ${newhour}:${newminute}h. Good night!`
+            }
+        }
+    </script>
+</body>
+</html>

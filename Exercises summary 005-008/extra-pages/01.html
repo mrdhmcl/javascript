@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fine system</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fine system</h1>
+    </header>
+
+    <section>
+        <p>
+            <form action="#" method="get">
+                <label for="inumber">Your speed was:</label> <input type="number" name="Number" id="inumber" min="1"> Km/h.
+                <input type="submit" value="Analyze" formaction="javascript:analyze()">
+            </form>
+        </p>
+    </section>
+
+    <section>
+        <p id="res">Result</p>
+        <a href="../index.html" target="_self" rel="previous">Home</a>
+    </section>
+
+<script>
+    function analyze(){
+        let speed = Number(document.getElementById('inumber').value)
+        let res = document.getElementById('res')
+
+        if(speed > 60){
+            res.innerHTML = `<p>You were driving at <strong>${speed}Km/h</strong>.</p>
+            <p>You have exceeded the maximum speed limit. You are <strong>FINED</strong>.</p>`
+        } else{
+            res.innerHTML = `<p>You were driving at <strong>${speed}Km/h</strong>.</p>`
+        }
+        res.innerHTML += 'Always wear your seat belt while driving.'
+    }
+</script>
+
+</body>
+</html>
