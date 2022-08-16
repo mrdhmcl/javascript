@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            background-color: #c8c8e8;
+        }
+
+        h1{
+            text-align: center;
+            font-size: 36px;
+        }
+
+        main{
+            background-color: white;
+            margin: auto;
+            max-width: 500px;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.419);
+        }
+
+        footer{
+            text-align: center;
+            font-style: italic;
+        }
+
+        a{
+    background-color: #E5E5E5;
+    border: 1px solid black;
+    color: black;
+    padding: 8px;
+    border-radius: 2px;
+    text-decoration: none;
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: 10px
+}
+
+a:hover{
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Number analyzer</h1>
+    </header>
+
+    <main>
+        <p>
+            <label for="iv1">Number (between 1 and 100):</label>
+            <input type="number" name="v1" id="iv1">
+            <input type="button" value="Add" onclick="add()">
+        </p>
+        <select style="width: 200px" name="table" id="itable" size="5">
+        </select> <br>
+        <input type="button" value="Finish" onclick="result()">
+        <p id="res"></p>
+    </main>
+
+    <footer>
+        <p>&copy; mrdhmcl</p>
+    </footer>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

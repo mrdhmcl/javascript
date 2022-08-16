@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My first array and its attributes</h1>
+    </header>
+
+    <main>
+        <section>
+            <h3>Adding values to a single variable</h3>
+            <p>
+                <p>- You can add as many values as you want by clicking on the button <strong>Add</strong>. When you finished, click on the button <strong>Reveal</strong> to see the entire variable <strong>num</strong>.</p>
+                <fieldset>
+                    <legend>Array</legend>
+                    <label for="iv1">
+                        <span class="blue">let num</span> =
+                    </label>
+                    <span class="yellow">[</span>
+                    <input type="number" name="v1" id="iv1" placeholder="add one value at a time">
+                    <span class="yellow">]</span>
+                    <input type="button" value="Add" onclick="add()"> num.push(input)
+            
+            </p>
+                <p>
+                    <span class="blue">let num</span> =
+                    <span class="yellow">[ </span>
+                    <span id="reveal"></span>
+                    <span class="yellow">]</span>
+                <input type="button" value="Reveal" onclick="reveal()">
+                </p>
+            </fieldset>
+        </section>
+
+
+
+        <section>
+            <h3>Array attributes (let num)</h3>
+            <fieldset>
+                <legend>Main attributes</legend>
+                <p><strong>Index(position):</strong></p>
+                <p>
+                    - Check the index of each value you've added inside the array. Enter one of the numbers you've added before and I'll show you its array position.</p>
+                    <span class="blue">num</span>.<span class="orange">indexOf(input)</span>:
+                    <input type="number" name="v2" id="iv2">
+                    <input type="button" value="Check" onclick="index()">
+                </p>
+                <p id="res0"></p>
+                <p><strong>Length:</strong></p>
+                <p>
+                    - Verify how many positions there is in the array with the attribute length.
+                </p>
+                <p>
+                    <span class="blue">num</span>.<span class="orange">length</span> = 
+                    <span id="length"></span>
+                    <input type="button" value="Verify" onclick="length()">
+                </p>
+
+                <p><strong>Sort:</strong></p>
+
+                <p>- Arrange the positions in ascending order.</p>
+                <p>
+                    <span class="blue">num</span>.<span class="orange">sort</span><span class="yellow">()</span>
+                     = 
+                    <span id="sort"></span>
+                    <input type="button" value="Arrange" onclick="sorte()">
+                </p>
+                
+            </fieldset>
+        </section>
+
+        <a href="../index.html" rel="previous" target="_self">Home</a>        
+    </main>
+
+
+    <script>
+        let numb = document.querySelector('input#iv1')
+        let numb2 = document.querySelector('input#iv2')
+        let Reveal = document.querySelector('span#reveal')
+        let res0 = document.getElementById('res0')
+        let Length = document.querySelector('span#length')
+        let Sort = document.querySelector('span#sort')
+        let num = []
+
+        function add(){
+            num.push(numb.value)
+            numb.value = ''
+            numb.focus()
+        }
+
+        function reveal(){
+            Reveal.innerHTML = `${num}`
+        }
+
+        function index(){
+            let key = num.indexOf(numb2.value)
+            if(key == -1){
+                window.alert(['Invalid number! You did not have added this value in the array.'])
+            } else{
+            res0.innerHTML = `The value ${numb2.value} is at position <strong>${key}</strong> of <span class='blue'> num</span>.`
+        }
+        }
+
+        function length(){
+            if (num.length == 1){
+                Length.innerHTML = `The array <span class="blue">num</span> has <strong>${num.length}</strong> position.`
+            } else{
+            Length.innerHTML = `The array <span class="blue">num</span> has <strong>${num.length}</strong> positions.`
+        }
+        }
+        
+        function sorte(){
+            num.sort()
+            Sort.innerHTML = `The variable is arranged. Now, <span class="blue">num</span> = <span class="yellow">[</span> <strong>${num}</strong> <span class="yellow">]</span>.`
+        }
+    </script>
+</body>
+</html>
