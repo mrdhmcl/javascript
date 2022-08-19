@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array analyzer</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    main{
+      max-width: 500px;
+    }
+
+    input#iv1{
+      width: 190px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Array analyzer</h1>
+  </header>
+
+  <main>
+    <p>
+      <label for="iv1">Numbers (between 1 and 100):</label>
+      <input type="number" name="v1" id="iv1" placeholder="Add values to the number set">
+      <input type="button" value="Add" onclick="set()">
+    </p>
+
+    <select style="width: 200px" name="table" id="itable" size="6"></select>
+    <br>
+      <input type="button" value="Finish" onclick="ready()">
+      <p id="res"></p>
+      <a href="../index.html" rel="previous" target="_self">Home</a>
+  </main>
+
+  <footer>
+    <p>&copy; mrdhmcl</p>
+  </footer>
+
+
+  <script>
+    let n1 = document.querySelector('input#iv1')
+    let table = document.querySelector('select#itable')
+    let array = []
+    let res = document.querySelector('p#res')
+
+    function analyzer(n){
+      if(Number(n) >= 1 && Number(n) <= 100){
+        return true
+      } else{
+        return false
+      }
+    }
+
+    function list(n, l){
+      if(l.indexOf(Number(n)) != -1){
+        return true
+      } else{
+        return false
+      }
+    }
+
+    function set(){
+      if(analyzer(n1.value) && !list(n1.value, array)){
+      array.push(Number(n1.value))
+
+      let item = document.createElement('option')
+
+      item.text = `The value ${n1.value} has been added.`
+
+      table.appendChild(item)
+
+      n1.value = ''
+      n1.focus()
+    } else{
+      window.alert('The value is invalid or it has already been added. Please, try again.')
+    }
+  }
+
+  function ready(){
+    let max = Math.max(...array)
+    let min = Math.min(...array)
+    let sum = 0
+
+    for (let c = 0; c < array.length; c++){
+      sum += array [c]
+    }
+
+    let med = sum / array.length
+
+      res.innerHTML = `<p>Altogether, we have ${array.length} numbers registered.</p>
+      <p>The highest value informed was ${max}.</p>
+      <p>The lowest value informed was ${min}.</p>
+      <p>Adding all values from the set, we have ${sum}.</p>
+      <p>The entered numbers average is: ${med}.</p>`
+    
+  }
+  </script>
+</body>
+</html>

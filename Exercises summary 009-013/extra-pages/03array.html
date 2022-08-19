@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd or even</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Is this number Odd or Even?</h1>
+    </header>
+
+    <main>
+        <p>
+            <label for="iv1">Enter a number:</label>
+            <input type="number" name="v1" id="iv1">
+            <input type="button" value="Check" onclick="oddeven()">
+        </p>
+        <p id="res">Calculating answer...</p>
+        <a href="../index.html" rel="previous" target="_self">Home</a>
+    </main>
+
+
+    <script>
+    let n1 = document.querySelector('input#iv1')
+    let res = document.querySelector('p#res')
+
+        function evenisTrue(n){
+            if(Number(n) % 2 == 0){
+                return true
+            } else{
+                return false
+            }
+        }
+
+        function oddeven(){
+            if(evenisTrue(n1.value)){
+                res.innerHTML = `The number ${n1.value} is an <strong>even</strong> number.`
+            } else{
+                res.innerHTML = `The number ${n1.value} is an <strong>odd</strong> number.`
+            }
+        }
+    </script>
+</body>
+</html>

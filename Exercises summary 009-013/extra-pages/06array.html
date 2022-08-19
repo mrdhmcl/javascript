@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      body{
+            text-indent: 20px;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Factorial number!</h1>
+    </header>
+
+    <main>
+      <p>Fill in the space below to find out the factorial of any number between 1 and 21.</p>
+        <p>
+            <label for="iv1">Enter a number:</label>
+            <input type="number" name="v1" id="iv1" placeholder="1-21">
+            <input type="button" value="!" onclick="factorial()">
+        </p>
+        <p id="res">Calculating answer...</p>
+        <a href="../index.html" rel="previous" target="_self">Home</a>
+    </main>
+
+
+    <script>
+    let n1 = document.querySelector('input#iv1')
+    let res = document.querySelector('p#res')
+
+        function inside(n){
+          if (n >= 1 && n <=21){
+            return true
+          } else{
+            return false
+          }
+        }
+
+        function factorial(){
+          if(inside(n1.value)){
+            res.innerHTML = `<h3>Calculating ${n1.value}!</h3>`
+            let mult = 1
+
+            for (let c = Number(n1.value); c > 1; c--){
+              
+              mult *= c
+
+              res.innerHTML += `${c} x `
+            }
+            res.innerHTML += `1 = <strong>${mult.toLocaleString('pt-BR')}</strong>`
+
+          } else{
+            window.alert('You have entered a number outside the limit. Please, read the instructions and try again.')
+          }
+        }
+    </script>
+</body>
+</html>

@@ -14,19 +14,44 @@ header{
     text-align: center;
 }
 
+main{
+    max-width: 300px;
+    margin: auto;
+}
+
 h1{
+    background-color: rgba(0, 0, 0, 0.814);
+    text-shadow: 1px 0px 1px white;
+    color: #005411;
     display: inline;
     padding: 5px;
     border-radius: 3px;
 }
 
+legend{
+    color: #005411;
+}
+
+
+
 footer{
+    display: block;
+    max-width: 100px;
     text-align: center;
-    margin: 10px 50px 10px 680px;
+    margin: 5px auto;
 }
 
 footer > p{
     display: inline;
     text-align: center;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #005411;
 }
 

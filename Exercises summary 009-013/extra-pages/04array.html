@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding numbers</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            text-indent: 20px;
+            text-align: justify;
+        }
+
+        input{
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Adding numbers</h1>
+    </header>
+
+    <main>
+        <p>Here, I'll present a new way to add numbers using function and return.</p>
+        <p>Enter the numbers you wanna add below, and I'll show you the result.</p>
+
+        <p>
+            Number 1:
+            <input type="number" name="v1" id="iv1"> +
+            Number 2:
+            <input type="number" name="v2" id="iv2"> =
+            <span id="result">Result</span>
+            <input type="button" value="Add" onclick="add()">
+        </p>
+        <a href="../index.html" rel="previous" target="_self">Home</a>
+    </main>
+
+    <script>
+        let n1 = document.querySelector('input#iv1')
+        let n2 = document.querySelector('input#iv2')
+        let res = document.querySelector('span#result')
+
+        function sum(na, nb){
+            return Number(na) + Number(nb)
+        }
+
+        function add(){
+            let c = sum (n1.value, n2.value)
+            res.innerHTML = `${c}`
+        }
+    </script>
+</body>
+</html>
