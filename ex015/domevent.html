@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Event</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      background-color: rgba(128, 0, 128, 0.144);
+      height: 100vh;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    input{
+      background-color: rgba(128, 0, 128, 0.692);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+
+      font-size: 18px;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <input onclick="appear()" type="button" value="Open Window">
+
+  <script>
+    function appear(){
+      const div = document.createElement('div')
+      div.innerHTML = '<div class="content">Press ESC to close</div>'
+
+      const body = document.querySelector('body')
+      body = ''
+      body.append(div)
+    }
+  </script>
+</body>
+</html>
