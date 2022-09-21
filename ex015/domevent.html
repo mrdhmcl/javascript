@@ -24,7 +24,13 @@
       justify-content: center;
     }
 
-    input{
+    #button{
+      position: relative;
+      height: 150px;
+      width: 180px;
+    }
+
+    button{
       background-color: rgba(128, 0, 128, 0.692);
       color: white;
       padding: 20px;
@@ -33,20 +39,60 @@
       font-size: 18px;
     }
 
-    
+    button:hover{
+      background-color: purple;
+    }
+
+    .hidden{
+      visibility: hidden;
+      flex: 0;
+    }
+
+    #container{
+      width: 150px;
+      height: 150px;
+      position: relative;
+      margin-top: -150px;
+
+      background-color: gray;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .content{
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
-  <input onclick="appear()" type="button" value="Open Window">
+
+  <div id="button">
+    <button onclick="appear()">Open Window</button>
+  </div>
+
+  <div id="container" class="hidden">
+    <div class="content">Press ESC to close</div>
+  </div>
 
   <script>
     function appear(){
-      const div = document.createElement('div')
-      div.innerHTML = '<div class="content">Press ESC to close</div>'
+      const div = document.querySelector('#container')
+      div.classList.remove('hidden')
 
-      const body = document.querySelector('body')
-      body = ''
-      body.append(div)
+      const button = document.querySelector('#button')
+      button.setAttribute('display', 'none')
+
+      document.addEventListener('keydown', function(event) {
+        const isEscKey = event.key === 'Escape'
+        if (isEscKey){
+          div.classList.add('hidden')
+        }
+      })
     }
   </script>
 </body>
