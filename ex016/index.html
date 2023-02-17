@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Lineup</title>
+  <script src="index.js"></script>
+</head>
+<body>
+  <h1>Team Lineup</h1>
+  <hr>
+
+  <fieldset>
+    <legend>Select a player</legend>
+
+    <ul>
+      <li>
+        <label for="position">Inform the player position:</label>
+        <select name="position" id="position">
+          <option value="goalkeeper">Goalkeeper</option>
+          <option value="rightFullBack">Right Full-back</option>
+          <option value="leftFullBack">Left Full-back</option>
+          <option value="centerBack">Center-back</option>
+          <option value="Sweeper">Sweeper</option>
+          <option value="defensiveMidfielder">Defensive Midfielder</option>
+          <option value="rightMidfielder">Right Midfielder</option>
+          <option value="leftMidfielder">Left Midfielder</option>
+          <option value="centerMidfielder">Center Midfielder</option>
+          <option value="Striker">Striker</option>
+          <option value="attackingMidfielder">Attacking Midfielder</option>
+        </select>
+      </li>
+      <br>
+      <li>
+        <label for="playerName">Inform the player name:</label>
+        <input type="text" name="playerName" id="playerName">
+      </li>
+      <br>
+      <li>
+        <label for="playerNumber">Inform the player number:</label>
+        <input type="number" name="playerNumber" id="playerNumber">
+      </li>
+    </ul>
+    <button onclick="selectPlayer()">Select</button>
+  </fieldset>
+  <br>
+  <fieldset>
+    <legend>Remove a player</legend>
+    <label for="removePlayerByNumber">Inform the player number:</label>
+    <input type="number" name="removePlayerByNumber" id="removePlayerByNumber">
+
+    <button onclick="removePlayer()">Remove</button>
+  </fieldset>
+
+  <section id="teamLineup">
+    <h2>Brazilian Team</h2>
+    <ul id="teamList">
+
+    </ul>
+  </section>
+</body>
+</html>
